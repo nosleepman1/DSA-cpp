@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
-#include "liste.hpp"
 #include <cstdlib>
+#include "strcuts.hpp"
 
 
 
@@ -13,6 +13,7 @@ int main()
 	listeMono *liMono = new listeMono();
 	listeBi *liBi = new listeBi();
 	employe em;
+	innt pos;
 
 
 	int choix;
@@ -39,7 +40,8 @@ int main()
 			break;
 		case 5:
 			system("cls");
-			cout << "Menu ajout a une position";
+			em = newEmploye();
+			insertAtPos(liBi, em, pos);
 			system("pause");
 		 	break;
 		case 6:

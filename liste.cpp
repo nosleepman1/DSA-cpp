@@ -1,13 +1,12 @@
-#include <iostream>
-#include <string>
-#include <cstdlib>
-using namespace std;
+#include "liste.hpp"
+#include "structs.hpp"
+
 
 
 int choixService(){
 	int choix;
 
-	cout<< "1. Informatique" << endl;
+	cout<< "\n1. Informatique" << endl;
 	cout<< "2. R. Humaine" << endl;
 	cout<< "3. Maintenance" << endl;
 	cout<< "\n Choix:  " ;
