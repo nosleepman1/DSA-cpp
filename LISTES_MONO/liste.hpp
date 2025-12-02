@@ -1,3 +1,4 @@
+
 #include <string>
 using namespace std;
 
@@ -144,15 +145,17 @@ public:
         }
 
          node *temp = this->head;
-         while (temp->data != end->data){
+        /**
+         * parcourirjusqu'ace que le suivant de temp pointe vers la derniere valeur
+         * 
+         */
+         while (temp->next != this->end){
             temp = temp->next;
-            if (temp->data == end->data) {
-                temp->next = nullptr;
-                this->end = temp;
-                break;
-            }
         }
-        delete temp;
+        node *deletedNode = this->end;
+        temp->next = nullptr;
+        this->end = temp;
+        delete deletedNode;
     }
 
     //--------------------------------------------------------------------------------//
