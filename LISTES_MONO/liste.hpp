@@ -127,32 +127,38 @@ public:
     //--------------------------------------------------------------------------------//
 
     void pop_back(){
-        //deletedNode va plustard contenir le noeud a supprimer et on libere sa memoire
-        //node *deletedNode = this->end;
+        /**
+         * deletedNode va plustard contenir le noeud a supprimer et on libere sa memoire
+         * Si liste vide on fait rien a part supprimer la variable deletedNode
+         */
+  
 
-        //Si liste vide on fait rien a part supprimer la variable deletedNode
         if(isEmpty()){
-            //delete deletedNode;
             return;
         } 
         //Si la tete a un seul element on retourne une liste vide
-        if (this->head->next == nullptr){
+        if (this->head == this->end){
             this->head = nullptr;
             this->end = nullptr;
-            //delete deletedNode;
+
             return;  
         }
-
+        /**
+         * Notre variable temp recupere la tete pour eviter la destruction lors du parcours
+         * Parcourir 
+         */
          node *temp = this->head;
-         while (temp->data != end->data){
-            temp = temp->next;
-            if (temp->data == end->data) {
-                temp->next = nullptr;
-                this->end = temp;
-                break;
-            }
-        }
-        delete temp;
+         node *temp1 = this->head;
+        
+         while (temp != )
+         {
+            /* code */
+         }
+         
+
+         temp->next = nullptr;
+         end = temp;
+         delete temp;
     }
 
     //--------------------------------------------------------------------------------//

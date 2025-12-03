@@ -17,7 +17,7 @@ int main()
     li.push_back(311);
     li.showList();
     //li.pop_back();
-    li.pop_back();
+    //li.pop_back();
     li.showList();
     return 0;
 }
