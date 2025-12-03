@@ -6,6 +6,8 @@ int main()
 {
     
     liste <int> li;
+
+    // test des fonctions
     std::cout << "La longueur de la liste est " << li.length() << "\n\n" << std::endl;
 
     li.push_front(18);

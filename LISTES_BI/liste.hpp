@@ -191,16 +191,26 @@ public:
 
         node *temp = this->head;
 
-        for (size_t i = 0; i < length()-1; i++){
+        for (size_t i = 0; i < pos; i++){
             temp = temp->next;
         }
         
         newNode->next = temp->next;
         newNode->prev = temp;
-        temp = newNode;
+
+        temp->next->prev = newNode;
+        temp->next = newNode;
     }
 
     /*---------------------------------------------------------------------------------------------*/
+
+    void deleteAt(){
+        
+    }
+
+
+    /*---------------------------------------------------------------------------------------------*/
+
 
 
     void showList() {
