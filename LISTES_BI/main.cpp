@@ -28,8 +28,12 @@ int main(int argc, char const *argv[])
     li.pop_back();
     li.showList();
 
-    std::cout << "\n--------------------------------------------------------------------------------\ninsertion a une position (3)" << std::endl;
-    li.insertAt(888, 1);
+    std::cout << "\n--------------------------------------------------------------------------------\ninsertion a une position (2)" << std::endl;
+    li.insertAt(888, 2);
+    li.showList();
+
+    std::cout << "\n--------------------------------------------------------------------------------\nsuppression a une position (2)" << std::endl;
+    li.deleteAt(2);
     li.showList();
 
 

@@ -176,11 +176,11 @@ public:
         /** */
         node *newNode = new node(val);
 
-        if (pos <= 0 || pos > length()){
+        if (pos < 1 || pos > length()){
             cout << "\n\nPosition saisie invalide";
             return;
         }
-        if (pos == 0){
+        if (pos == 1){
             push_front(val);
             return;
         }
@@ -191,7 +191,7 @@ public:
 
         node *temp = this->head;
 
-        for (size_t i = 0; i < pos; i++){
+        for (size_t i = 1; i < pos - 1; i++){
             temp = temp->next;
         }
         
@@ -204,8 +204,30 @@ public:
 
     /*---------------------------------------------------------------------------------------------*/
 
-    void deleteAt(){
+    void deleteAt(int pos){
+
+        if (pos < 1 || pos > length()){
+            cout << "\n\nPosition saisie invalide";
+            return;
+        }
+        if (pos == 1){
+            pop_front();
+            return;
+        }
+        if (pos == length()){
+            pop_back();
+            return;
+        }
+
+        node *temp = this->head;
+
+        for (size_t i = 1; i < pos; i++)
+        {
+            temp = temp->next;
+        }
         
+        temp->prev->next = temp->next;
+        temp->next->prev = temp->prev;
     }
 
 
