@@ -29,19 +29,3 @@
 |           |-readme.md
 |-readme.md
 ```
-
-<style>
-    p {
-        font-size : 20px
-    }
-
-    span {
-        color : yellow
-    }
-
-    b {
-        color : blue
-    }
-
-    h1 {font-size : 3.2rem}
- </style>
