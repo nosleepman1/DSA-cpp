@@ -98,6 +98,34 @@ public:
 
     //--------------------------------------------------------------------------------//
 
+    //insertion a une position donnée
+
+    void push_at(T val, int pos) {
+
+        if (isEmpty()) return;
+
+        if (pos == 1) {
+            push_front(val);
+            return;
+        }
+        if (pos == length() + 1) {
+            push_back(val);
+            return;
+        }
+
+        node *temp = this->head;
+        for (int i = 1; i < pos - 1; i++) {
+            temp = temp->next;
+        }
+
+        node *newNode = new node(val);
+
+        newNode->next = temp->next;
+        temp->next = newNode;
+    }
+
+    //--------------------------------------------------------------------------------//
+
     //les suppressions au debut et a la fin
     void pop_front(){
         //deletedNode va plustard contenir le noeud a supprimer et on libere sa memoire
