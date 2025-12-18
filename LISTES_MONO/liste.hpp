@@ -177,7 +177,6 @@ public:
          * Parcourir 
          */
          node *temp = this->head;
-<<<<<<< HEAD
          node *temp1 = this->head;
         
          while (temp != )
@@ -189,7 +188,6 @@ public:
          temp->next = nullptr;
          end = temp;
          delete temp;
-=======
         /**
          * parcourirjusqu'ace que le suivant de temp pointe vers la derniere valeur
          * 
@@ -206,6 +204,33 @@ public:
 
     //--------------------------------------------------------------------------------//
     
+
+    void pop_at(int pos) {
+
+        if(isEmpty()) return;
+
+        if(pos == 1) {
+            pop_front();
+            return;
+        }
+
+        if (pos == length()) {
+            pop_back();
+            return;
+        }
+
+        node *temp = this->head;
+        for (int i = 0; i < pos - 1; i++) {
+            temp = temp->next;
+        }
+        
+        node *todelete = temp->next;
+        temp->next = todelete->next;
+        delete todelete;        
+    }
+
+
+    //--------------------------------------------------------------------------------//
     //fonction afichage
     void showList(){
         node *temp = this->head;

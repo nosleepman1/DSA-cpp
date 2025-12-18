@@ -135,7 +135,38 @@ public:
 
     
     //--------------------------------------------------------------------------------//
+    //inserer à une position
 
+    void push_at(T val, int pos) {
+
+        if (isEmpty()) return;
+
+        if (pos == 1) {
+            push_front(val);
+            return;
+        }
+        if (pos == length() + 1) {
+            push_back(val);
+            return;
+        }
+
+        node* temp = this->head;
+        for (int i = 1; i < pos - 1; i++) {
+            temp = temp->next;
+        }
+
+        node* newNode = new node(val);
+
+        newNode->next = temp->next;
+        newNode->prev = temp;
+
+        temp->next->prev = newNode;
+        temp->next = newNode;
+    }
+
+
+
+    //--------------------------------------------------------------------------------//
     /**
      * pop_front() : Supprime l'élément au début de la liste doublement chaînée.
      *
@@ -208,6 +239,34 @@ public:
 
 
     /*-----------------------------------------------------------------------------------------*/
+   
+    void pop_at(int pos) {
+
+         if(isEmpty()) return;
+
+        if(pos == 1) {
+            pop_front();
+            return;
+        }
+
+        if (pos == length()) {
+            pop_back();
+            return;
+        }
+
+        node *temp = this->head;
+        for (int i = 1; i < pos - 1; i++) {
+            temp = temp->next;
+        }
+
+        node *todelete = temp->next;
+        temp->next = todelete->next
+        todelete->next->prev = temp;
+        delete todelete;
+        
+    }
+   
+   /*-----------------------------------------------------------------------------------------*/
     /**
      * Fonction insertAt : insère un élément à une position donnée dans une liste doublement chaînée.
      *
